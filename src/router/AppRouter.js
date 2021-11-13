@@ -2,21 +2,21 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Nav from '../components/Nav'
-// import Tamales from '../components/Tamales'
-// import Bebidas from '../components/Bebidas'
-// import Guajalotas from '../components/Guajalotas'
+import Tamales from '../components/Tamales'
+import Bebidas from '../components/Bebidas'
+import Guajalotas from '../components/Guajalotas'
 
 export const AppRouter = () => {
     return (
         <div>
                 <BrowserRouter>
                 <Nav/>
-            {/* <Routes>
+             <Routes>
         <Route path='/tamales' element={<Tamales/>}/>
         <Route path='/guajalotas' element={<Guajalotas/>}/>
         <Route path='/bebidas'element={<Bebidas/>} />
 
-            </Routes> */}
+            </Routes> 
                 </BrowserRouter>
 
         </div>
