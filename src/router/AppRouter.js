@@ -12,6 +12,7 @@ export const AppRouter = () => {
                 <BrowserRouter>
                 <Nav/>
              <Routes>
+            <Route path='/' element={<Tamales/>}/>
         <Route path='/tamales' element={<Tamales/>}/>
         <Route path='/guajalotas' element={<Guajalotas/>}/>
         <Route path='/bebidas'element={<Bebidas/>} />
