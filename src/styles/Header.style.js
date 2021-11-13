@@ -8,6 +8,9 @@ export const StyleHeader= styled.header`
   align-items: center;
   padding: 27px 28px 0px 24px;
   margin-bottom: 38px;
+  img{
+    width: 60px;
+  }
 .car{
     width: 24px;
     height: 24px;
