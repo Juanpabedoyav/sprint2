@@ -21,6 +21,20 @@ useEffect(() => {
    
 }, [])
 
+const handleClick = (target)=>{
+console.log(target.button);
+if (target.button === 0){
+    console.log("hiciste click al plato");
+}
+
+}
+
+   
+
+
+
+
+
 
 
     return (
@@ -28,7 +42,7 @@ useEffect(() => {
         {
            Guajalotas.map((guaja, i)=>{
             return (
-            <StyleCard key={i}>    
+            <StyleCard onClick={handleClick} key={i}>    
             <div className="img">   
             <img src={guaja.imagen}  alt="" />
             </div> 
