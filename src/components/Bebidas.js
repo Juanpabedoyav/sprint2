@@ -1,33 +1,18 @@
 
 import React, { useState, useEffect } from 'react'
 import { StyleCard, StyleContainer, StyledDescripcion} from '../styles/Platos.style'
+import { useGet } from '../hooks/useGet'
 
 const Bebidas = () => {
 
 // hook
-const [Bebida, setBebida] = useState([])
-
-useEffect(() => {
-    fetch('https://srpint2.herokuapp.com/bebidas')
-    .then(response => {
-        return response.json();
-    })
-    .then((data)=>{
-        setBebida(data);
-        // console.log(data);
-    })
-    .catch(()=>{
-        console.log("Un error mi bro!");
-    })
-   
-}, [])
-
-
+let url='https://srpint2.herokuapp.com/bebidas'
+let {getData} = useGet(url);
 
     return (
         <StyleContainer>
         {
-           Bebida.map((bebida, i)=>{
+           getData.map((bebida, i)=>{
             return (
             <StyleCard key={i}>    
             <div className="img">   

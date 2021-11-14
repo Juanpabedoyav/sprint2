@@ -1,32 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import { StyleCard, StyleContainer, StyledDescripcion} from '../styles/Platos.style'
+import { useGet } from '../hooks/useGet'
 
 const Tamales = () => {
-
-// hook
-const [Tamales, setTamales] = useState([])
-
-useEffect(() => {
-    fetch('https://srpint2.herokuapp.com/tamales')
-    .then(response => {
-        return response.json();
-    })
-    .then((data)=>{
-        setTamales(data);
-        // console.log(data);
-    })
-    .catch(()=>{
-        console.log("Un error mi bro!");
-    })
-   
-}, [])
-
-
+  
+  
+    let url='https://srpint2.herokuapp.com/tamales'
+    let {getData} = useGet(url);
+    
 
     return (
         <StyleContainer>
         {
-           Tamales.map((tamal,i)=>{
+           getData.map((tamal,i)=>{
             return (
             <StyleCard key={i}>    
             <div className="img">   

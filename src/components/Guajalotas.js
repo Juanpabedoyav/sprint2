@@ -1,25 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { StyleCard, StyleContainer, StyledDescripcion} from '../styles/Platos.style'
+import { useGet } from '../hooks/useGet'
 
 const Guajalotas = () => {
 
 // hook
-const [Guajalotas, setGuajalotas] = useState([])
+let url = 'https://srpint2.herokuapp.com/guajolotes'
 
-useEffect(() => {
-    fetch('https://srpint2.herokuapp.com/guajolotes')
-    .then(response => {
-        return response.json();
-    })
-    .then((data)=>{
-        setGuajalotas(data);
-        // console.log(data);
-    })
-    .catch(()=>{
-        console.log("Un error mi bro!");
-    })
-   
-}, [])
+let {getData} = useGet(url)
 
 const handleClick = (target)=>{
 console.log(target.button);
@@ -29,20 +17,12 @@ if (target.button === 0){
 
 }
 
-   
-
-
-
-
-
-
-
     return (
         <StyleContainer>
         {
-           Guajalotas.map((guaja, i)=>{
+           getData.map((guaja)=>{
             return (
-            <StyleCard onClick={handleClick} key={i}>    
+            <StyleCard onClick={handleClick} key={guaja.id}>    
             <div className="img">   
             <img src={guaja.imagen}  alt="" />
             </div> 
