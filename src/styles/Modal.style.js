@@ -9,5 +9,9 @@ export const StyleModal = styled.div`
     height: 100vh;
     /* opacity: 0; */
     z-index:999;
-
+.close-modal{
+  border:none;
+  margin-left: 10px;
+  font-size: 2rem;
+}
 `

@@ -55,6 +55,16 @@ margin-left: 8px;
   margin-top: 40px;
 }
 .copy-combo{
-  color: #0D0D0D;
+  color: #0d0d0d90;
+  font-weight: 400;
+  font-size:0.9rem;
+  width: 300px;
+  margin: 8px 0px 20px 15px;
 }
+h3{
+font-size: 1.2rem;
+font-weight: 600;
+margin-left: 15px;
+}
+
 `

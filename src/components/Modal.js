@@ -5,7 +5,7 @@ export const Modal = ({children}) => {
         <>
             <StyleModal >
             <div className="container">
-             <button className="close-modal">🡨</button>
+             <button type="button" className="close-modal">🡨</button>
             {children} 
             </div>
             </StyleModal>  

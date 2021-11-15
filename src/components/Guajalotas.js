@@ -6,9 +6,9 @@ const Guajalotas = () => {
 
 // hook
 let url = 'https://srpint2.herokuapp.com/guajolotes'
-
 let {getData} = useGet(url)
 
+// funcion click para activar modal
 const handleClick = (target)=>{
 console.log(target.button);
 if (target.button === 0){
@@ -22,6 +22,7 @@ if (target.button === 0){
         {
            getData.map((guaja)=>{
             return (
+
             <StyleCard onClick={handleClick} key={guaja.id}>    
             <div className="img">   
             <img src={guaja.imagen}  alt="" />
@@ -31,9 +32,10 @@ if (target.button === 0){
             <p className='precio'> ${guaja.precio} MXN</p>
             </StyledDescripcion>
             </StyleCard>
-
+            
             )
            })
+
         }
         </StyleContainer>
     )

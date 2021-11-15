@@ -2,11 +2,23 @@ import React from 'react'
 import { useGet } from '../hooks/useGet'
 import {StyleForm} from '../styles/FormVenta.Style'
 import { Modal } from './Modal'
+import { useModal } from '../hooks/useModal'
+
+
+
 
 export const FormVenta = () => {
+    // hook useGet
     let url = 'https://srpint2.herokuapp.com/bebidas'
     let {getData} = useGet(url);
-const compra=[];
+
+    //hook useModal
+    const {abrir, abrirModal, cerrarModal} = useModal(false)
+
+
+
+const compra=[];//constanta para guardar checkbox 
+// manipulo los inptuspara conocer valor
 const handleChange = ({target})=>{
 console.log(target.checked);
 
@@ -24,17 +36,17 @@ compra.push(add);
 }
 
 }
-
+// funcion de envio de formulario
 const handleSubmit = (e)=>{
     e.preventDefault();
     alert("se envio la compra")
 }
 
-
     return (
+//  modal con pror{children}       
 <Modal>
-            {/* <h1> Crud carro</h1> */}
-            <StyleForm onSubmit={handleSubmit}>
+       
+        <StyleForm onSubmit={handleSubmit}>
             <div>
                         <h3>Guajolocombo</h3>
                         <p className="copy-combo">Selecciona la bebida que más te guste y disfruta de tu desayuno.</p>
@@ -71,7 +83,9 @@ const handleSubmit = (e)=>{
 
         <button className="botton" type="submit ">Agregar al Carro</button>
         </StyleForm>
+        
 </Modal> 
+
     )
 
 
