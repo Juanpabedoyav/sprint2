@@ -20,7 +20,7 @@ const Tamales = () => {
             </div> 
             <StyledDescripcion>
             <p className='nombre'> {tamal.sabor}</p>
-            <p className='precio'> {tamal.precio}</p>
+            <p className='precio'> $ {tamal.precio} MXN</p>
             </StyledDescripcion>
             </StyleCard>
 

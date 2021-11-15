@@ -20,7 +20,7 @@ let {getData} = useGet(url);
             </div> 
             <StyledDescripcion>
             <p className='nombre'> {bebida.sabor}</p>
-            <p className='precio'> {bebida.precio}</p>
+            <p className='precio'> $ {bebida.precio} MXN</p>
             </StyledDescripcion>
             </StyleCard>
 

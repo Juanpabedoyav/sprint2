@@ -1,0 +1,60 @@
+import styled from 'styled-components'
+
+export const StyleForm = styled.form`
+margin-left: 8px;
+.combo{
+    /* border: 1px solid red; */
+    padding: 5px;
+    margin: 5px;
+    display: inline-block;
+      width: 152px;
+      height: 138px;
+    text-align: left;
+    border-radius: 20px;
+      background-color: #FFFF;
+
+    /* grid-template-columns: 50px 50px ; */
+    /* grid-template-rows: 120px; */
+
+}
+[type="checkbox"]{
+    position: relative;
+    left: 120px;
+    bottom: 60px;
+    /* border: 1px solid black; */
+    
+}
+ .items{
+    /* border: 1px solid green; */
+    /* flex-direction: row; */
+      /* width: 150px; */
+ }   
+.nombre{
+    font-size:1rem;
+    font-weight: 600;
+    color:#0D0D0D;
+    margin-bottom: 8px;
+}
+.precio{
+    font-size: .9rem;
+    color:#FA4A0C;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.botton{
+  width:312px;
+  height: 69px;
+  border-radius: 40px;
+  display:block;
+  margin: 0 auto;
+  background-color:#FA4A0C;
+  border: none;
+  font-weight: 600;
+  font-size:1rem;
+  color: #FFFF;
+  margin-top: 40px;
+}
+.copy-combo{
+  color: #0D0D0D;
+}
+`

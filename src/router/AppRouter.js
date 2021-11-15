@@ -14,7 +14,11 @@ export const AppRouter = () => {
              <Routes>
             <Route path='/' element={<Tamales/>}/>
         <Route path='/tamales' element={<Tamales/>}/>
-        <Route path='/guajalotas' element={<Guajalotas/>}/>
+        <Route path='/guajalotas' element={<Guajalotas>
+            <h3>hola</h3>
+            <h3>hola</h3>
+            <h3>hola</h3>
+            </Guajalotas>}/>
         <Route path='/bebidas'element={<Bebidas/>} />
 
             </Routes> 

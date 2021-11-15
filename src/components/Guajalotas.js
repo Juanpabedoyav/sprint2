@@ -28,7 +28,7 @@ if (target.button === 0){
             </div> 
             <StyledDescripcion>
             <p className='nombre'> {guaja.sabor}</p>
-            <p className='precio'> {guaja.precio}</p>
+            <p className='precio'> ${guaja.precio} MXN</p>
             </StyledDescripcion>
             </StyleCard>
 
