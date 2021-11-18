@@ -1,8 +1,8 @@
 import React from 'react'
 import { useGet } from '../hooks/useGet'
 import {StyleForm} from '../styles/FormVenta.Style'
-import { Modal } from './Modal'
-import { useModal } from '../hooks/useModal'
+// import { Modal } from './Modal'
+// import { useModal } from '../hooks/useModal'
 
 
 
@@ -13,7 +13,7 @@ export const FormVenta = () => {
     let {getData} = useGet(url);
 
     //hook useModal
-    const {abrir, abrirModal, cerrarModal} = useModal(false)
+    // const {abrir, abrirModal, cerrarModal} = useModal(false)
 
 
 
@@ -44,7 +44,6 @@ const handleSubmit = (e)=>{
 
     return (
 //  modal con pror{children}       
-<Modal>
        
         <StyleForm onSubmit={handleSubmit}>
             <div>
@@ -84,7 +83,6 @@ const handleSubmit = (e)=>{
         <button className="botton" type="submit ">Agregar al Carro</button>
         </StyleForm>
         
-</Modal> 
 
     )
 

@@ -16,7 +16,7 @@ function Nav() {
            </li>
            <li>
            <NavLink 
-           to="guajalotas"
+           to="/guajalotas"
            className="">Guajoalotas</NavLink>
            </li>
            <li>

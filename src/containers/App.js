@@ -4,15 +4,15 @@ import {StyleCopy} from '../styles/Copy.style'
 import {AppRouter} from '../router/AppRouter'
 import {Header} from '../components/Header'
 import {Buscador} from '../components/Buscador'
-import {FormVenta} from '../components/FormVenta'
+// import {FormVenta} from '../components/FormVenta'
 function App() {
   return (
     <div>
            <Header />
-           <FormVenta />
-          {/* <StyleCopy>Nada como una Guajolota para empezar el día</StyleCopy>
+           {/* <FormVenta /> */}
+  <StyleCopy>Nada como una Guajolota para empezar el día</StyleCopy>
           <Buscador/>
-          <AppRouter /> */}
+          <AppRouter /> 
 
 
 

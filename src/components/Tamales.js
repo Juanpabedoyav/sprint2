@@ -1,20 +1,23 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { StyleCard, StyleContainer, StyledDescripcion} from '../styles/Platos.style'
 import { useGet } from '../hooks/useGet'
+import {useModal} from '../hooks/useModal'
+import {Modal} from './Modal'
+import {FormVenta} from './FormVenta'
 
 const Tamales = () => {
-  
-  
+    let {abrir, abrirModal, cerrarModal} = useModal(false)
+    
     let url='https://srpint2.herokuapp.com/tamales'
     let {getData} = useGet(url);
     
 
     return (
-        <StyleContainer>
+       <><StyleContainer>
         {
            getData.map((tamal,i)=>{
             return (
-            <StyleCard key={i}>    
+            <StyleCard key={i} onClick={abrirModal}>    
             <div className="img">   
             <img src={tamal.imagen}  alt="" />
             </div> 
@@ -28,6 +31,9 @@ const Tamales = () => {
            })
         }
         </StyleContainer>
+         <Modal abrir={abrir} cerrar={cerrarModal}>
+         <FormVenta />
+         </Modal></>
     )
 }
 

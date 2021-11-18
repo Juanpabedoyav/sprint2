@@ -1,0 +1,25 @@
+
+.modal{
+    position: fixed;
+    display:none;
+    top: 0;
+    left: 0;
+    /* border: 1px solid red; */
+    height: 100vh;
+    opacity: 1;
+    z-index:999;
+}
+.modal.abrir{
+  display: flex;
+}
+.container{
+  background-color:#F2F2F2;
+}
+
+
+.close{
+  border:none;
+  margin-left: 10px;
+  font-size: 2rem;
+  
+}

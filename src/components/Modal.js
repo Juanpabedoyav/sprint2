@@ -1,14 +1,14 @@
 import React from 'react'
-import  {StyleModal} from '../styles/Modal.style'
-export const Modal = ({children}) => {
+import '../styles/Modal.style.css'
+export const Modal = ({children, abrir, cerrarModal}) => {
     return (
         <>
-            <StyleModal >
+            <div className= {`modal ${abrir && "abrir"}`}>
             <div className="container">
-             <button type="button" className="close-modal">🡨</button>
+             <button className="close" onClick={cerrarModal}>🡨</button>
             {children} 
             </div>
-            </StyleModal>  
+            </div>  
         </>      
      
     )
