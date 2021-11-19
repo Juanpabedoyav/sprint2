@@ -10,16 +10,9 @@ const Guajalotas = () => {
 // hook data
 let url = 'https://srpint2.herokuapp.com/guajolotes'
 let {getData} = useGet(url)
-//hook modal
-let {abrir, abrirModal, cerrarModal} = useModal(false)
-// funcion click para activar modal
-// const handleClick = (target)=>{
-// console.log(target.button);
-// if (target.button === 0){
-//     console.log("hiciste click al plato");
-// }
 
-// }
+//hook modal
+let {abrir, abrirModal,     cerrarModal} = useModal(false)
 
     return (
         <><StyleContainer>
@@ -41,9 +34,8 @@ let {abrir, abrirModal, cerrarModal} = useModal(false)
            
         </StyleContainer>
     <Modal abrir={abrir} cerrar={cerrarModal}>
-         <FormVenta />
-     </Modal>
-     </>
+            <FormVenta/>
+     </Modal></>
     )
 }
 
