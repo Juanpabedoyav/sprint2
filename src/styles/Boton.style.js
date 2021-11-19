@@ -26,20 +26,3 @@ h1{
 
 `
 
-export const StyleBotonAgg= styled.button`
-
-  width:312px;
-  height: 69px;
-  border-radius: 40px;
-  display:block;
-  margin: 0 auto;
-  background-color:#FA4A0C;
-  border: none;
-  font-weight: 600;
-  font-size:1rem;
-  color: #FFFF;
-  margin-top: 40px;
-
-
-
-`

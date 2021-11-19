@@ -8,7 +8,7 @@ import flavorrajas from '../assets/flavorrajas.svg'
 import flavorpiña from '../assets/flavorpiña.svg'
 import flavorpasas from '../assets/flavorpasas.svg'
 import flavormole from '../assets/flavormole.svg'
-// import flavorverde from '../assets/flavorverde.svg'
+import flavorguayaba from '../assets/flavorguayaba.svg'
 
 
 
@@ -24,14 +24,14 @@ export const FormVenta = () => {
 
 // const compra=[];//constanta para guardar checkbox 
 // manipulo los inptuspara conocer valor
-// const handleChange = ({target})=>{
-// console.log(target.checked);
+const handleChange = ({target})=>{
+console.log(target.checked);
 
 // if (target.checked === true){
 //     let add= 
 // {
 //     precio: target.value ,
-// };
+};
 
 // compra.push(add);
 //     console.log("Agregsaste al carro", target.name, compra);
@@ -67,7 +67,8 @@ const handleSubmit = (e)=>{
                             <img src={flavorpiña} alt="" />
                             <img src={flavormole} alt="" />
                             <img src={flavorpasas} alt="" />
-                        
+                            <img src={flavorguayaba} alt="" />
+
                         </div>
 
             </div>
@@ -90,7 +91,7 @@ const handleSubmit = (e)=>{
                                     type="checkbox"
                                     name={elem.sabor}
                                     value={elem.precio}
-                                    onChange='' />
+                                    onChange={handleChange} />
 
                                 <img src={elem.imagen} alt="" />
                                 <p className="nombre">{elem.sabor}</p>
