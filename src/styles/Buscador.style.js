@@ -19,7 +19,7 @@ export const  StyledCaja = styled.div`
     position:relative;
     font-size: 1.3rem;
     bottom: 40px;
-    left: 40px;
+    left: 55px;
     color:#9A9A9D;
 }
 `

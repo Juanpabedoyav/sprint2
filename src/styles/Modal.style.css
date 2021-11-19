@@ -4,6 +4,7 @@
     display:none;
     top: 0;
     left: 0;
+    width:100%;
     /* border: 1px solid red; */
     height: 100vh;
     opacity: 1;
@@ -15,6 +16,10 @@
 .container{
   background-color:#F2F2F2;
   overflow-y: scroll;
+  min-width: 100%; 
+  margin: 0 auto;
+      border: 1px solid red;
+
 }
 
 
