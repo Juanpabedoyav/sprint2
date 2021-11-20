@@ -10,7 +10,7 @@ export const Header = () => {
 
 // let {abrir, abrirModal, cerrarModal} = useModal(false);
     return (
-       <><StyleHeader>
+       <StyleHeader>
             <div>
             <img src={logo} alt="" />
             </div>
@@ -19,10 +19,6 @@ export const Header = () => {
             </div>  
   
         </StyleHeader>
-        {/* <Modal abrir={abrir} cerrar={cerrarModal}>
-        <h1>Bienvenido Al Carrito </h1>
-
-        </Modal></> */}
         
     )
 }

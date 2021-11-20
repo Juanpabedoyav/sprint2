@@ -5,19 +5,20 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Tamales from '../components/Tamales'
 import Bebidas from '../components/Bebidas'
 import Guajalotas from '../components/Guajalotas'
-import Carrito from '../componenets/Carrito'
-import App from '../containers/App'
+import Carrito from '../components/Carrito'
+import {FormVenta} from '../components/FormVenta'
 export const AppRouter = () => {
     return (
         <div>
             <BrowserRouter>
-        <App/>
+      
             <Routes>
             <Route path='/' element={<Tamales/>}/>
             <Route path='/tamales' element={<Tamales/>}/>
             <Route path='/guajalotas' element={<Guajalotas/>}/>
             <Route path='/bebidas'element={<Bebidas/>} />
             <Route path='/carrito'element={<Carrito/>} />
+            <Route path='/detalle'element={<FormVenta/>} />
 
             </Routes> 
              </BrowserRouter>

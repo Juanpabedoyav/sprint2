@@ -2,6 +2,11 @@ import styled from 'styled-components'
 
 export const StyleForm = styled.form`
 margin-left: 8px;
+.volver{
+  font-size: 2rem;
+  text-decoration: none;
+  color:black;
+}
 .combo{
     /* border: 1px solid red; */
     padding: 5px;

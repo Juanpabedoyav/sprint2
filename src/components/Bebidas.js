@@ -2,8 +2,10 @@
 import React  from 'react'
 import { StyleCard, StyleContainer, StyledDescripcion} from '../styles/Platos.style'
 import { useGet } from '../hooks/useGet'
-import {useModal} from '../hooks/useModal'
-import {Modal} from './Modal'
+// import {useModal} from '../hooks/useModal'
+// import {Modal} from './Modal'
+import App from '../containers/App'
+import {Link} from 'react-router-dom'
 
 const Bebidas = () => {
 
@@ -13,16 +15,19 @@ let url='https://srpint2.herokuapp.com/bebidas'
 let {getData} = useGet(url);
 
 //hook modal
-let{abrir, abrirModal, cerrarModal}=useModal(false)
+// let{abrir, abrirModal, cerrarModal}=useModal(false)
 
 
 
     return (
-      <><StyleContainer>
+      <>
+      <App/>
+      <StyleContainer>
         {
-           getData.map((bebida, i)=>{
+           getData.map((bebida)=>{
             return (
-            <StyleCard onClick={abrirModal} key={i}>    
+            <Link to="/detalle/">
+            <StyleCard  key={bebida.id}>    
             <div className="img">   
             <img src={bebida.imagen}  alt="" />
             </div> 
@@ -31,14 +36,12 @@ let{abrir, abrirModal, cerrarModal}=useModal(false)
             <p className='precio'> $ {bebida.precio} MXN</p>
             </StyledDescripcion>
             </StyleCard>
-
+            </Link>
             )
            })
         }
         </StyleContainer>
-        <Modal abrir={abrir} cerrar={cerrarModal}>
-            <h1>Es Hora de crear tu combo</h1>
-        </Modal></>
+        </>
     )
 }
 

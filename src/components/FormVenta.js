@@ -9,7 +9,8 @@ import flavorpiña from '../assets/flavorpiña.svg'
 import flavorpasas from '../assets/flavorpasas.svg'
 import flavormole from '../assets/flavormole.svg'
 import flavorguayaba from '../assets/flavorguayaba.svg'
-
+import {StyleGlobal} from '../styles/Platos.style'
+import { Link } from 'react-router-dom'
 
 
 export const FormVenta = () => {
@@ -51,6 +52,8 @@ const handleSubmit = (e)=>{
 //  modal con pror{children}
  
 <StyleForm onSubmit={handleSubmit}>
+<Link className="volver"  to='/'>🡨</Link>
+<StyleGlobal/>
   
   <StyleCantidad>
   <button className='boton menos'type='buttom' onClick={restar}>-</button>

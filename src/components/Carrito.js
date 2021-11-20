@@ -1,10 +1,17 @@
 import React from 'react'
-
+import { StyleGlobal } from '../styles/Platos.style'
+import { Link } from 'react-router-dom'
+import { StyleCarrito } from '../styles/Carrito.style'
 const Carrito = () => {
     return (
-        <div>
-            <h1>Bienvenido al carrito</h1>
-        </div>
+
+        <StyleCarrito>
+            <Link  to='/'>🡨</Link>
+            <h1 className="titulo">carrito</h1>
+            <StyleGlobal/>
+
+        </StyleCarrito>
+
     )
 }
 
