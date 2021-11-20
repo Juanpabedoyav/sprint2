@@ -10,7 +10,6 @@ import App from '../containers/App'
 
 const Tamales = () => {
    //  let {abrir, abrirModal, cerrarModal} = useModal(false)
-    
     let url='https://srpint2.herokuapp.com/tamales'
     let {getData} = useGet(url);
     

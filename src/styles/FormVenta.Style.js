@@ -18,9 +18,6 @@ margin-left: 8px;
     border-radius: 20px;
       background-color: #FFFF;
 
-    /* grid-template-columns: 50px 50px ; */
-    /* grid-template-rows: 120px; */
-
 }
 [type="checkbox"]{
     position: relative;
@@ -72,4 +69,31 @@ font-weight: 600;
 margin-left: 15px;
 }
 
+`
+
+
+
+
+export const StyleSabor = styled.div`
+/* border: 1px solid red; */
+.titulo{
+  font-size: 1.2rem;
+font-weight: 600;
+margin-left: 15px;
+}
+.flavors{
+/* border: 1px solid red; */
+margin: 20px 0;
+display:flex;
+
+flex-wrap: wrap;
+
+img{
+opacity:0.3;
+
+  margin-left: 30px;
+  margin-top: 10px;
+
+}
+}
 `

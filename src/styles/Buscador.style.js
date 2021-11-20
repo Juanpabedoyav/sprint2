@@ -5,7 +5,7 @@ export const  StyledInput = styled.input`
 background:#E7E7E7;
 display:block;
 margin: 0 auto;
-width: 262px;
+width: 210px;
 height: 60px;
 border: none;
 border-radius: 30px;
@@ -21,5 +21,20 @@ export const  StyledCaja = styled.div`
     bottom: 40px;
     left: 55px;
     color:#9A9A9D;
+}
+`
+
+export const StyleBuscador = styled.div`
+/* border: 1px solid red; */
+display: flex;
+flex-direction: row;
+margin-top: 30px;
+padding: 0 10px;
+justify-content: space-around;
+align-items: center;
+.cancel{
+    text-decoration: none;
+    color: black;
+    font-weight: 800;
 }
 `

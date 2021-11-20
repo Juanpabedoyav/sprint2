@@ -1,7 +1,7 @@
 import React from 'react'
 import { useContar } from '../hooks/useContar'
 import { useGet } from '../hooks/useGet'
-import {StyleForm} from '../styles/FormVenta.Style'
+import {StyleForm, StyleSabor} from '../styles/FormVenta.Style'
 import {StyleCantidad} from '../styles/Boton.style'
 import flavorverde from '../assets/flavorverde.svg'
 import flavorrajas from '../assets/flavorrajas.svg'
@@ -45,7 +45,7 @@ console.log(target.checked);
 // funcion de envio de formulario
 const handleSubmit = (e)=>{
     e.preventDefault();
-   
+   alert("Revisa tu carrito");
 }
 
     return (
@@ -62,9 +62,9 @@ const handleSubmit = (e)=>{
   <button className='boton mas' type='buttom' onClick={adicionar}>+</button>
 
   </StyleCantidad>
-             <div>
-                        <h2>Sabor</h2>
-                        <div>
+             <StyleSabor>
+                        <h2 className="titulo">Sabor</h2>
+                        <div className= "flavors">
                             <img src={flavorverde} alt="" />
                             <img src={flavorrajas} alt="" />
                             <img src={flavorpiña} alt="" />
@@ -74,34 +74,31 @@ const handleSubmit = (e)=>{
 
                         </div>
 
-            </div>
+            </StyleSabor>
         
             <div>
-                        <h3>Guajolocombo</h3>
-                        <p className="copy-combo">Selecciona la bebida que más te guste y disfruta de tu desayuno.</p>
-        </div>
+                <h3>Guajolocombo</h3>
+                <p className="copy-combo">Selecciona la bebida que más te guste y disfruta de tu desayuno.</p>
+            </div>
            {
 
             getData.map((elem)=>{
                 return(
                     <>
-
-                    
                     <div className="combo">
-                            <div className="items">
-                                <input
-                                    key={elem.id}
+                            <div key={elem.id} className="items">
+                                <input  
                                     type="checkbox"
                                     name={elem.sabor}
                                     value={elem.precio}
                                     onChange={handleChange} />
 
-                                <img src={elem.imagen} alt="" />
+                                <img src={elem.imagen} alt={elem.nombre} />
                                 <p className="nombre">{elem.sabor}</p>
                                 <p className="precio">+ ${elem.precio} MXN</p>
                             </div>
 
-                        </div></>
+                    </div></>
 
             
                 )
@@ -110,7 +107,7 @@ const handleSubmit = (e)=>{
     
 }
 
-        <button className="botton" type="submit ">Agregar {cantidad} al Carro </button>
+        <button className="botton" type="submit">Agregar {cantidad} al Carro </button>
         </StyleForm>
         
 
