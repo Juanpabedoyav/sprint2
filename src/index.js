@@ -1,11 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './containers/App'
+import {AppRouter} from './router/AppRouter'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <AppRouter />,
   document.getElementById('root')
 );
 

@@ -3,25 +3,26 @@ import logo from '../assets/logo.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import  { StyleHeader } from '../styles/Header.style'
-import {useModal} from '../hooks/useModal'
-import {Modal} from './Modal'
+// import {useModal} from '../hooks/useModal'
+import {Link} from 'react-router-dom'
+// import {Modal} from './Modal'
 export const Header = () => {
 
-let {abrir, abrirModal, cerrarModal} = useModal(false);
+// let {abrir, abrirModal, cerrarModal} = useModal(false);
     return (
        <><StyleHeader>
             <div>
             <img src={logo} alt="" />
             </div>
             <div>
-            <FontAwesomeIcon onClick={abrirModal} className="car" icon={faShoppingCart}/>
+            <Link to='/carrito'><FontAwesomeIcon  className="car" icon={faShoppingCart}/></Link>
             </div>  
   
         </StyleHeader>
-        <Modal abrir={abrir} cerrar={cerrarModal}>
+        {/* <Modal abrir={abrir} cerrar={cerrarModal}>
         <h1>Bienvenido Al Carrito </h1>
 
-        </Modal></>
+        </Modal></> */}
         
     )
 }
