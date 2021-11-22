@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { StyleCard, StyleContainer, StyledDescripcion} from '../styles/Platos.style'
 
-const Tamales = ({tamal}) => {
+const Tamales = () => {
 
 // hook
 const [Tamales, setTamales] = useState([])
