@@ -10,7 +10,14 @@ align-items: center;
 background-color:white;
 border-radius: 20px;
 padding: 4px 0px;
-
+.input-cantidad{
+border:none;
+margin: 0px 15px;
+width: 40px;
+text-align:center;
+font-size:2rem;
+font-weight: 800;
+}
 h1{
     margin: 0px 15px;
 }

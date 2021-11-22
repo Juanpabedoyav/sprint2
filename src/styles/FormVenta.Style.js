@@ -71,7 +71,16 @@ font-size: 1.2rem;
 font-weight: 600;
 margin-left: 15px;
 }
-
+.imgen-principal{
+  /* border: 1px solid red; */
+  margin : 0 auto;
+  text-align: center;
+  .img{
+  /* border: 1px solid red; */
+  height: 120px;
+  width: 120px;
+}
+}
 `
 
 
@@ -98,5 +107,12 @@ opacity:0.3;
   margin-top: 10px;
 
 }
+.opa{
+  opacity:1; 
+margin-left: 30px;
+margin-top: 10px;
+}
+
+
 }
 `

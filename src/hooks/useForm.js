@@ -1,15 +1,21 @@
-// import React, { useState } from 'react'
+import React, { useState } from 'react'
 
 
-// export const useForm = () => {
-//     const [datos, setDatos] = useState([{
-//         sabor :'',
-//         cantidad:'',
-//         precio: '',
-//         adicion: ' '
-//     }])
-    
-//     return (
-     
-//     )
-// }
+export const useForm = () => {
+    const [datos, setDatos] = useState({
+        sabor :'',
+        cantidades:'',
+        precio: '',
+        adicion: ' '
+    })
+    const handleChange=({target})=>{
+        setDatos({
+            ...datos,
+            [target.name]: target.value,
+        })
+    }
+    return [
+     datos,
+     handleChange
+    ]
+}

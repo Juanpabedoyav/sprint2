@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 // import Nav from '../components/Nav'
 import Tamales from '../components/Tamales'
@@ -11,16 +11,15 @@ import BuscadorPersonalizado from '../components/BuscadorPersonalizado'
 export const AppRouter = () => {
 
 
-
     return (
         <div>
             <BrowserRouter>
       
             <Routes>
             <Route path='/' element={<Tamales/>}/>
-            <Route path='/tamales' element={<Tamales/>}/>
+            <Route path='/tamales' element={<Tamales />}/>
             <Route path='/guajalotas' element={<Guajalotas />}/>
-            <Route path='/bebidas'element={<Bebidas/>} />
+            <Route path='/bebidas'element={<Bebidas />} /> 
             <Route path='/carrito'element={<Carrito/>} />
             <Route exact path='/detalle/:id/'element={<FormVenta />} />
             <Route path='/busqueda'element={<BuscadorPersonalizado/>} />
