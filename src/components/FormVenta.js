@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { useContar } from '../hooks/useContar'
-import { useForm } from '../hooks/useForm'
+// import { useForm } from '../hooks/useForm'
 import {StyleForm, StyleSabor} from '../styles/FormVenta.Style'
 import {StyleCantidad} from '../styles/Boton.style'
 import flavorverde from '../assets/flavorverde.svg'
@@ -32,7 +32,6 @@ const [guajalota, setGuajalota] = useState([])
 
 
 
-
 const getData = async()=>{
     const resTamal = await fetch('https://srpint2.herokuapp.com/tamales');
     const datosTamal = await resTamal.json();
@@ -52,10 +51,11 @@ const getData = async()=>{
     sabor :`${id}`,
     cantidades: '',
     total: '',
-    adicion: ''
+    adicion: '',
+    imagen: ?filtro.imagen : filtro2.imagen
 })
 const handleChange=({target})=>{
-    let total= Number(datos.cantidades)  + Number(datos.adicion);
+    // let total= Number(datos.cantidades)  + Number(datos.adicion);
     setDatos({
         ...datos,
         [target.name]: target.value,
@@ -64,7 +64,7 @@ const handleChange=({target})=>{
 
     if (target.checked === false) {
         delete datos.adicion;
-          total = total -  Number(datos.adicion);
+        //   total = total -  Number(datos.adicion);
     }
     console.log(datos);
 }
