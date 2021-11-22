@@ -98,6 +98,8 @@ const sendData = async()=>{
                <div className="imgen-principal">
                         {/* <h1>{el.sabor}</h1> */}
                     <img className="img" src={el.imagen} alt={el.sabor} />
+                    <p>{el.sabor}</p>
+                    <p>${el.precio} MXN</p>
                     </div>
             ) 
         })
@@ -109,7 +111,9 @@ const sendData = async()=>{
               return(                   
                <div className="imgen-principal">
                         {/* <h1>{el.sabor}</h1> */}
-                    <img className="img" src={el.imagen} alt={el.nombre} />
+                    <img className="img" src={el.imagen} alt={el.sabor} />
+                    <p>{el.sabor}</p>
+                    <p>${el.precio} MXN</p>
                     </div>
             ) 
         })
