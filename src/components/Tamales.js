@@ -1,47 +1,53 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { StyleCard, StyleContainer, StyledDescripcion} from '../styles/Platos.style'
+// import { useGet } from '../hooks/useGet'
+// import {useModal} from '../hooks/useModal'
+// import {Modal} from './Modal'
+// import {FormVenta} from './FormVenta'
+import {Link} from 'react-router-dom'
+
+import App from '../containers/App'
 
 const Tamales = () => {
+   //  let {abrir, abrirModal, cerrarModal} = useModal(false)
+const [data, setData] = useState([])
 
-// hook
-const [Tamales, setTamales] = useState([])
-
-useEffect(() => {
-    fetch('https://srpint2.herokuapp.com/tamales')
-    .then(response => {
-        return response.json();
-    })
-    .then((data)=>{
-        setTamales(data);
-        // console.log(data);
-    })
-    .catch(()=>{
-        console.log("Un error mi bro!");
-    })
+   const getData = async()=>{
+      const res = await fetch('https://srpint2.herokuapp.com/tamales');
+      const datos = await res.json();
+      setData(datos);
+   } 
+  useEffect(() => {
+  getData();
+  }, [])
    
-}, [])
-
-
+   // let url='https://srpint2.herokuapp.com/tamales'
+   //  let {getData} = useGet(url);
+    
 
     return (
-        <StyleContainer>
+       <>
+       <App/>
+       <StyleContainer>
         {
-           Tamales.map((tamal,i)=>{
+           data.map((tamal )=>{
             return (
-            <StyleCard key={i}>    
+           <Link to={`/detalle/${tamal.sabor}`}><StyleCard key={tamal.id} >    
             <div className="img">   
             <img src={tamal.imagen}  alt="" />
             </div> 
             <StyledDescripcion>
             <p className='nombre'> {tamal.sabor}</p>
-            <p className='precio'> {tamal.precio}</p>
+            <p className='precio'> $ {tamal.precio} MXN</p>
             </StyledDescripcion>
-            </StyleCard>
+            </StyleCard></Link>
 
             )
            })
         }
         </StyleContainer>
+        </>
+        
     )
 }
 

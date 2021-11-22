@@ -10,6 +10,7 @@ body{
     margin: 0 auto;
     background-color: #F2F2F2;
     font-family: 'Inter', sans-serif;
+    height: 980px;
 }
 a{
     text-decoration: none;
@@ -23,7 +24,7 @@ justify-content:center ;
 align-items: center;
 `
 
-export const StyleCard = styled.div`
+export const StyleCard = styled.button`
 width:312px;
 height:112px;
 background-color: #FFFF;
@@ -34,6 +35,7 @@ align-items: center;
 border-radius: 20px;
 margin-bottom: 8px;
 padding-left: 16px;
+border:none;
 /* border: 1px solid red; */
 `
 export const StyledDescripcion = styled.div`
