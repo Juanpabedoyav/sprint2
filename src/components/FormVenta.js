@@ -52,7 +52,7 @@ const getData = async()=>{
     cantidades: '',
     total: '',
     adicion: '',
-    imagen: ?filtro.imagen : filtro2.imagen
+    // imagen: filtro.imagen : filtro2.imagen
 })
 const handleChange=({target})=>{
     // let total= Number(datos.cantidades)  + Number(datos.adicion);
