@@ -55,6 +55,9 @@ margin-left: 8px;
   font-size:1rem;
   color: #FFFF;
   margin-top: 40px;
+  position: fixed;
+  bottom: 30px;
+
 }
 .copy-combo{
   color: #0d0d0d90;

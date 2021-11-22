@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { useContar } from '../hooks/useContar'
 import { useGet } from '../hooks/useGet'
 import {StyleForm, StyleSabor} from '../styles/FormVenta.Style'
@@ -10,10 +10,17 @@ import flavorpasas from '../assets/flavorpasas.svg'
 import flavormole from '../assets/flavormole.svg'
 import flavorguayaba from '../assets/flavorguayaba.svg'
 import {StyleGlobal} from '../styles/Platos.style'
-import { Link } from 'react-router-dom'
+import { Link, useParams} from 'react-router-dom'
 
 
-export const FormVenta = () => {
+export const FormVenta = ({info}) => {
+   
+//    const {id}= useParams();
+    
+
+// console.log(info);
+
+
     // hook useGet
     let url = 'https://srpint2.herokuapp.com/bebidas'
     let {getData} = useGet(url);
@@ -56,10 +63,10 @@ const handleSubmit = (e)=>{
 <StyleGlobal/>
   
   <StyleCantidad>
-  <button className='boton menos'type='buttom' onClick={restar}>-</button>
+  <button className='boton menos'type='button' onClick={restar}>-</button>
  
    <h1>{cantidad}</h1>
-  <button className='boton mas' type='buttom' onClick={adicionar}>+</button>
+  <button className='boton mas' type='button' onClick={adicionar}>+</button>
 
   </StyleCantidad>
              <StyleSabor>

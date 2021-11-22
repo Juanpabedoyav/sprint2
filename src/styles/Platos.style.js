@@ -10,6 +10,7 @@ body{
     margin: 0 auto;
     background-color: #F2F2F2;
     font-family: 'Inter', sans-serif;
+    height: 980px;
 }
 a{
     text-decoration: none;

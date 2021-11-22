@@ -1,7 +1,7 @@
 
-import React  from 'react'
+import React, { useEffect, useState }  from 'react'
 import { StyleCard, StyleContainer, StyledDescripcion} from '../styles/Platos.style'
-import { useGet } from '../hooks/useGet'
+// import { useGet } from '../hooks/useGet'
 // import {useModal} from '../hooks/useModal'
 // import {Modal} from './Modal'
 import App from '../containers/App'
@@ -10,10 +10,16 @@ import {Link} from 'react-router-dom'
 const Bebidas = () => {
 
 // hooks
+const [data, setData] = useState([])
 
-let url='https://srpint2.herokuapp.com/bebidas'
-let {getData} = useGet(url);
-
+const getData = async()=>{
+    const res = await fetch('https://srpint2.herokuapp.com/bebidas');
+    const datos = await res.json();
+    setData(datos);
+ } 
+useEffect(() => {
+getData();
+}, [])
 //hook modal
 // let{abrir, abrirModal, cerrarModal}=useModal(false)
 
@@ -24,7 +30,7 @@ let {getData} = useGet(url);
       <App/>
       <StyleContainer>
         {
-           getData.map((bebida)=>{
+           data.map((bebida)=>{
             return (
             <Link to="/detalle/">
             <StyleCard  key={bebida.id}>    

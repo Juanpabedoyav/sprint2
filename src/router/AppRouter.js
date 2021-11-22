@@ -9,6 +9,9 @@ import Carrito from '../components/Carrito'
 import {FormVenta} from '../components/FormVenta'
 import BuscadorPersonalizado from '../components/BuscadorPersonalizado'
 export const AppRouter = () => {
+
+
+
     return (
         <div>
             <BrowserRouter>
@@ -16,10 +19,10 @@ export const AppRouter = () => {
             <Routes>
             <Route path='/' element={<Tamales/>}/>
             <Route path='/tamales' element={<Tamales/>}/>
-            <Route path='/guajalotas' element={<Guajalotas/>}/>
+            <Route path='/guajalotas' element={<Guajalotas />}/>
             <Route path='/bebidas'element={<Bebidas/>} />
             <Route path='/carrito'element={<Carrito/>} />
-            <Route path='/detalle'element={<FormVenta/>} />
+            <Route exact path='/detalle/:id/'element={<FormVenta />} />
             <Route path='/busqueda'element={<BuscadorPersonalizado/>} />
 
             </Routes> 
