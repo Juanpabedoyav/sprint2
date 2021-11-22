@@ -8,6 +8,7 @@ import Guajalotas from '../components/Guajalotas'
 import Carrito from '../components/Carrito'
 import {FormVenta} from '../components/FormVenta'
 import BuscadorPersonalizado from '../components/BuscadorPersonalizado'
+import { FormVenta1 } from '../components/FormVenta1'
 export const AppRouter = () => {
 
 
@@ -22,6 +23,8 @@ export const AppRouter = () => {
             <Route path='/bebidas'element={<Bebidas />} /> 
             <Route path='/carrito'element={<Carrito/>} />
             <Route exact path='/detalle/:id/'element={<FormVenta />} />
+            <Route exact path='/detalle/combo/:id/'element={<FormVenta1 />} />
+
             <Route path='/busqueda'element={<BuscadorPersonalizado/>} />
 
             </Routes> 
