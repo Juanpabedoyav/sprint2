@@ -7,7 +7,7 @@ import {useModal} from '../hooks/useModal'
 import { StyleCantidad } from '../styles/Boton.style'
 import { useContar } from '../hooks/useContar'
 const Carrito = () => {
-
+// hooks personalizados
 const {abrir, abrirModal, cerrarModal}= useModal(false)
 const{cantidad, adicionar ,restar }= useContar(0); 
 
@@ -33,17 +33,17 @@ useEffect(() => {
             {
                 dataCar.map((el)=>{
                     return(
-            <StyleCard onClick={abrirModal} className='carrito' key={el.id}>    
+            <div onClick={abrirModal} className='carrito' key={el.id}>    
             <div className="img">   
             <img src={el.imagen}  alt="" />
             </div> 
- 
-
             <StyledDescripcion>
             <p className='nombre'> </p>
             <p className='precio'> $ {el.adicion} MXN</p>
             </StyledDescripcion>
-            </StyleCard>
+          
+
+            </div>
             )
             })
 
@@ -52,7 +52,7 @@ useEffect(() => {
 }
 </div>
 
-
+<StyleCard className="cardCar">Total</StyleCard>
         </StyleCarrito>
 <Modal abrir={abrir}  cerrar={cerrarModal}>
 < ModalButon>    
@@ -65,9 +65,8 @@ useEffect(() => {
               <input className='input-cantidad' 
                  type="number"
                   name="cantidades"
-                  value="{datos.cantidades}"
-                        // defaultValue={cantidad}
-                      onChange="{handleChange}"
+                  value={cantidad}
+                    //   onChange={handleChange}
             /> 
              </h1> 
         <button className='boton mas' type='button' onClick={adicionar}>+</button>

@@ -25,6 +25,12 @@ height: 1150px;
 
 
 }
+.cardCar{
+    height:40px;
+    margin: 0 auto;
+
+    margin-top:50px;
+}
 `
 
 export const ModalButon = styled.button`
