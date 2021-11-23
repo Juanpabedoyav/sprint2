@@ -11,14 +11,22 @@ height: 1250px;
 .combo{
     /* border: 1px solid red; */
     padding: 5px;
-    margin: 5px;
+    margin-left: 10px;
     display: inline-block;
       width: 152px;
       height: 138px;
     text-align: left;
     border-radius: 20px;
       background-color: #FFFF;
+      margin-top: 20px;
+      /* margin-left:auto; */
+      /* margin-right:auto; */
+}
+.items{
+  /* border:1px solid red; */
+  margin: 0 auto;
 
+  
 }
 [type="checkbox"]{
     position: relative;
@@ -53,10 +61,10 @@ height: 1250px;
     text-transform: uppercase;
 }
 .botton{
-  width:312px;
+  width:340px;
   height: 69px;
   border-radius: 40px;
-  display:block;
+  /* display:block; */
   margin: 0 auto;
   background-color:#FA4A0C;
   border: none;
@@ -65,6 +73,8 @@ height: 1250px;
   color: #FFFF;
   margin-top: 40px;
   position: fixed;
+  left:0;
+  right:0;
   bottom: 30px;
 
 }
