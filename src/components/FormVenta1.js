@@ -9,6 +9,9 @@ import flavorchampurrado from '../assets/flavorchampurrado.svg'
 import flavorchocolate from '../assets/flavorchocolate.svg'
 import {StyleGlobal} from '../styles/Platos.style'
 import { Link, useParams} from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+
 
 
 export const FormVenta1 = () => {
@@ -83,7 +86,11 @@ const sendData = async()=>{
     return (
 
 <StyleForm onSubmit={handleSubmit}>
+ 
 <Link className="volver"  to='/'>🡨</Link>
+
+<Link to='/carrito'><FontAwesomeIcon  className="car" icon={faShoppingCart}/></Link>
+ 
 <StyleGlobal/>
   <div>
       {
@@ -93,8 +100,8 @@ const sendData = async()=>{
                <div className="imgen-principal">
                         {/* <h1>{el.sabor}</h1> */}
                     <img className="img" src={el.imagen} alt={el.sabor} />
-                    <p>{el.sabor}</p>
-                    <p>${el.precio} MXN</p>
+                    <p className="sabor-principal">{el.sabor}</p>
+                    <p className="precio-principal">${el.precio} MXN</p>
                     </div>
             ) 
         })
@@ -142,10 +149,10 @@ const sendData = async()=>{
                                 <input  
                                     type="checkbox"
                                     name='adicion'
-                                    value={elem.precio}
+                                    value={elem.sabor +" + $" + elem.precio +"MXN"}
                                     onChange={handleChange} />
                                     
-                                <img src={elem.imagen} alt={elem.nombre} />
+                                <img src={elem.imagen} alt={elem.sabor} />
                                 <p className="nombre">{elem.sabor}</p>
                                 <p className="precio">+ ${elem.precio} MXN</p>
                             </div>

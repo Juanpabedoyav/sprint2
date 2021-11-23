@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const StyleForm = styled.form`
 margin-left: 8px;
+height: 1250px;
 .volver{
   font-size: 2rem;
   text-decoration: none;
@@ -26,11 +27,19 @@ margin-left: 8px;
     /* border: 1px solid black; */
     
 }
- .items{
-    /* border: 1px solid green; */
-    /* flex-direction: row; */
-      /* width: 150px; */
- }   
+.sabor-principal{
+  font-size: 1.4rem;
+    color:black;
+    font-weight: 800;
+    text-transform: uppercase;
+} 
+.precio-principal{
+  font-size: 1.2rem;
+    color:#FA4A0C;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-top: 10px; 
+}  
 .nombre{
     font-size:1rem;
     font-weight: 600;
@@ -81,6 +90,16 @@ margin-left: 15px;
   width: 120px;
 }
 }
+.car{
+    width: 28px;
+    height: 28px;
+    color:#9A9A9D;
+    /* border: 1px solid red; */
+  position: relative;
+  left: 270px;
+  top: 5px;
+  } 
+
 `
 
 

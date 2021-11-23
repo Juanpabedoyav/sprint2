@@ -10,11 +10,12 @@ body{
     margin: 0 auto;
     background-color: #F2F2F2;
     font-family: 'Inter', sans-serif;
-    height: 980px;
+    height: 1100px;
 }
 a{
     text-decoration: none;
 }
+
 `
 export const StyleContainer= styled.section`
 /* border: 1px solid red; */
@@ -36,6 +37,8 @@ border-radius: 20px;
 margin-bottom: 8px;
 padding-left: 16px;
 border:none;
+
+
 /* border: 1px solid red; */
 `
 export const StyledDescripcion = styled.div`
