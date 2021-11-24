@@ -87,7 +87,7 @@ const sendData = async()=>{
 
 <StyleForm onSubmit={handleSubmit}>
  
-<Link className="volver"  to='/'>🡨</Link>
+<Link className="volver"  to='/bebidas'>🡨</Link>
 
 <Link to='/carrito'><FontAwesomeIcon  className="car" icon={faShoppingCart}/></Link>
  
