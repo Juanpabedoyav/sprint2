@@ -54,7 +54,9 @@ const changeData = async()=>{
     
     < ModalButon>    
     <div className="img">   
-    <img src=''  alt="" />
+    <img src={filtro.imagen}  alt="" />
+    <img src={filtro.imagen1}  alt="" />
+
     </div> 
 
 

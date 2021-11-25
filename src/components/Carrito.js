@@ -28,6 +28,8 @@ const Carrito = ({dataCar}) => {
           <StyledDescripcion>
                 <div className="img">   
                     <img src={el.imagen}  alt="" />
+                    <img src={el.imagen1}  alt="" />
+
                  </div> 
                     <p className='nombre'>{el.sabor} </p>
                      <p className='precio'>x {el.cantidades} </p>

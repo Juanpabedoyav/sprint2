@@ -31,13 +31,15 @@ const [guajalota, setGuajalota] = useState([])
 // React Router-Dom
 
     const {id}= useParams();
-   let filtro = tamal.filter(el=>el.sabor === id) 
-   let filtro2 = guajalota.filter(el=>el.sabor === id) 
+   let filtro = tamal.filter(el=>el.sabor == id) 
+   let filtro2 = guajalota.filter(el=>el.sabor == id) 
+//    const a=[];
+//    if(filtro.imagen == undefined )  { 
+//     a = filtro2
+// }
+// console.log(filtro   )
 
-//    const costo1 =filtro.find(x=>x.precio);
-//    const costo =filtro2.find(x=>x.precio);
 
-// console.log(costo, costo1)
 const getData = async()=>{
     const resTamal = await fetch('https://srpint2.herokuapp.com/tamales');
     const datosTamal = await resTamal.json();
@@ -46,8 +48,9 @@ const getData = async()=>{
     const datosBebidas = await resBebidas.json();
     setBebida(datosBebidas);
     const resGuajalota = await fetch('https://srpint2.herokuapp.com/guajolotes');
-    const datosGuajalota = await resGuajalota.json();
+const datosGuajalota = await resGuajalota.json();
     setGuajalota(datosGuajalota);
+    
  } 
  useEffect(() => {
     getData();
@@ -57,14 +60,16 @@ const getData = async()=>{
     sabor :`${id}`,
     cantidades: '',
     total: '',
-    adicion: [],
-    // imagen: filtro.imagen : filtro2.imagen
+    adicion: '',
+    imagen:``,
+    imagen1:``,
+
+
 })
 const handleChange=({target})=>{
     setDatos({
         ...datos,
         [target.name]: target.value,
-        
     })
 
     if (target.checked === false) {
@@ -107,7 +112,13 @@ const sendData = async()=>{
                     <img className="img" src={el.imagen} alt={el.sabor} />
                     <p className="sabor-principal">{el.sabor}</p>
                     <p className="precio-principal">${el.precio} MXN</p>
+                    <input 
+                     style={{display:"none"}}
+                    name='imagen'
+                    value={el.imagen}
+                    onInput={handleChange} />
                     </div>
+            
             ) 
         })
      
@@ -121,7 +132,15 @@ const sendData = async()=>{
                     <img className="img" src={el.imagen} alt={el.sabor} />
                     <p className="sabor-principal">{el.sabor}</p>
                     <p className="precio-principal">${el.precio} MXN</p>
+                    <input  
+                     style={{display:"none"}}
+                     name="imagen1"
+                     value={el.imagen}
+                     onInput={handleChange} 
+                     
+                     />
                     </div>
+                    
             ) 
         })
      
