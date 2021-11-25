@@ -17,7 +17,7 @@ body{
     margin: 0 auto;
     background-color: #F2F2F2;
     font-family: 'Inter', sans-serif;
-    height: 1100px;
+    height: ${props=>props.carro ? "500px" : "1150px"};
 }
 a{
     text-decoration: none;

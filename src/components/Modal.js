@@ -50,7 +50,7 @@ const changeData = async()=>{
    <>
           <Link className='carrito' to='/carrito/'>🡨</Link>
 
-
+<div className="dato">
     
     < ModalButon>    
     <div className="img">   
@@ -89,7 +89,8 @@ const changeData = async()=>{
 </ModalButon>
 
 
-<StyleGlobal/>
+</div>
+<StyleGlobal carro/>
 
 </>
    
