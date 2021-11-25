@@ -29,16 +29,21 @@ const [guajalota, setGuajalota] = useState([])
     const {id}= useParams();
    let filtro = bebida.filter(el=>el.sabor === id) 
 //    let filtro2 = guajalota.filter(el=>el.sabor === id) 
+// const costo =filtro.precio;
+// let a= filtro.find(x=>x)
+// let  {precio}=a
 
 
 
+// console.log(precio)
 const getData = async()=>{
 
     const resBebidas = await fetch('https://srpint2.herokuapp.com/bebidas');
     const datosBebidas = await resBebidas.json();
-    setBebida(datosBebidas);
     const resGuajalota = await fetch('https://srpint2.herokuapp.com/guajolotes');
     const datosGuajalota = await resGuajalota.json();
+    setBebida(datosBebidas);
+
     setGuajalota(datosGuajalota);
  } 
  useEffect(() => {
@@ -164,7 +169,7 @@ const sendData = async()=>{
 
             })   
 }
-        <button className="botton" type="submit" onClick={sendData}>Agregar {cantidad} al Carro $ {Number(datos.total)} </button>
+        <button className="botton" type="submit" onClick={sendData}>Agregar {datos.cantidades} al Carro $ {Number(datos.cantidades*12)} </button>
 </StyleForm>
     )
 }

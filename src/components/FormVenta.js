@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import { useContar } from '../hooks/useContar'
+// import { useContar } from '../hooks/useContar'
 // import { useForm } from '../hooks/useForm'
 import {StyleForm, StyleSabor} from '../styles/FormVenta.Style'
 import {StyleCantidad} from '../styles/Boton.style'
@@ -17,7 +17,10 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 export const FormVenta = () => {
 //   hooks personalizados
-const{cantidad, adicionar ,restar }= useContar(0); 
+const [cantidad, setCantidad] = useState(0)
+
+const adicionar = ()=> setCantidad(cantidad + 1)
+const restar = ()=> setCantidad(cantidad -1 )
 
 // hooks
 const [tamal, setTamal] = useState([])
@@ -31,8 +34,10 @@ const [guajalota, setGuajalota] = useState([])
    let filtro = tamal.filter(el=>el.sabor === id) 
    let filtro2 = guajalota.filter(el=>el.sabor === id) 
 
+//    const costo1 =filtro.find(x=>x.precio);
+//    const costo =filtro2.find(x=>x.precio);
 
-
+// console.log(costo, costo1)
 const getData = async()=>{
     const resTamal = await fetch('https://srpint2.herokuapp.com/tamales');
     const datosTamal = await resTamal.json();
@@ -52,15 +57,14 @@ const getData = async()=>{
     sabor :`${id}`,
     cantidades: '',
     total: '',
-    adicion: '',
+    adicion: [],
     // imagen: filtro.imagen : filtro2.imagen
 })
 const handleChange=({target})=>{
-    // let total= Number(datos.cantidades)  + Number(datos.adicion);
     setDatos({
         ...datos,
         [target.name]: target.value,
-       
+        
     })
 
     if (target.checked === false) {
@@ -100,7 +104,6 @@ const sendData = async()=>{
           filtro.map((el) => {
               return(                   
                <div className="imgen-principal">
-                        {/* <h1>{el.sabor}</h1> */}
                     <img className="img" src={el.imagen} alt={el.sabor} />
                     <p className="sabor-principal">{el.sabor}</p>
                     <p className="precio-principal">${el.precio} MXN</p>
@@ -127,17 +130,18 @@ const sendData = async()=>{
   </div>
   <StyleCantidad>
   <button className='boton menos'type='button' onClick={restar}>-</button>
-
- <h1>
+ 
      <input className='input-cantidad' 
-     type="number"
+     type="text"
     name="cantidades"
     value={datos.cantidades}
-    // defaultValue={cantidad}
-    onChange={handleChange}
- /></h1>
+    // onFocusCapture
+    onChange={handleChange} /> 
+    
+ 
+ 
    
-  <button className='boton mas' type='button' onClick={adicionar}>+</button>
+  <button className='boton mas' type='button' onClick={()=>adicionar()}>+</button>
 
   </StyleCantidad>
              <StyleSabor>
@@ -181,7 +185,7 @@ const sendData = async()=>{
 
             })   
 }
-        <button className="botton" type="submit" onClick={sendData}>Agregar {cantidad} al Carro $ {Number(datos.total)} </button>
+        <button className="botton" type="submit" onClick={sendData}>Agregar {datos.cantidades} al Carro $ {Number(datos.total) } </button>
 </StyleForm>
     )
 }
