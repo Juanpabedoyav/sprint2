@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React,{useEffect,useState} from 'react'
 import { StyleCantidad } from '../styles/Boton.style'
 import { ModalButon } from '../styles/Carrito.style'
 import '../styles/Modal.style.css'
@@ -7,31 +7,54 @@ import { useContar } from '../hooks/useContar'
 import { Link, useParams } from 'react-router-dom'
 
 export const Modal = ({dataCar}) => {
-    const {id}= useParams()
+
+
+const{cantidad, adicionar ,restar }= useContar(0); 
+
+    
+const {id}= useParams()
 const filtro = dataCar.find(x=>x.id ==id)
-// console.log(id)
-// const getData = ()=>{
-// console.log(filtro)
-// // dataCar();
-// }
 
-// useEffect(() => {
-//     getData();
-// }, [])
+const [modifica, setModifica] = useState({
+    sabor :`${filtro.sabor}`,
+    cantidades: ''  ,
+    total: '',
+    adicion: `${filtro.adicion}`,
+})
 
-    const{cantidad, adicionar ,restar }= useContar(0); 
+const handleChange=({target})=>{
+    setModifica({
+        ...modifica,
+        [target.name]:target.value
+    })
+    console.log(modifica);
+}
 
+const handleSubmit=()=>{
+    alert("se actualizo data")
+
+}
+
+const changeData = async()=>{
+ await fetch(`https://srpint2.herokuapp.com/carrito/${id}`,{
+    method:'PUT',
+     body: JSON.stringify(modifica),
+     headers:{
+         "Content-Type": "application/json; charset = utf-8"
+     }
+ })
+ alert('actualizacion exitoasa');
+
+}
     return (
    <>
-          <Link  to='/carrito/'>🡨</Link>
-{
-    filtro.map((el)=>{
-        return(
+          <Link className='carrito' to='/carrito/'>🡨</Link>
+
 
     
     < ModalButon>    
     <div className="img">   
-    <img src={el.imagen}  alt="" />
+    <img src=''  alt="" />
     </div> 
 
 
@@ -39,14 +62,19 @@ const filtro = dataCar.find(x=>x.id ==id)
 
 <StyleCantidad>
 <button className='boton menos'type='button' onClick={restar}>-</button>
-        <h1>
+      <h1>
+     <form onSubmit={handleSubmit}>
+
       <input className='input-cantidad' 
-         type="number"
+         type="text"
           name="cantidades"
-          value={cantidad}
-            //   onChange={handleChange}
+          value={modifica.cantidades}
+              onChange={handleChange}
+              
     /> 
-     </h1> 
+    </form > 
+
+    </h1>
 <button className='boton mas' type='button' onClick={adicionar}>+</button>
 </StyleCantidad>
 
@@ -54,14 +82,12 @@ const filtro = dataCar.find(x=>x.id ==id)
 
 
     <StyledDescripcion>
-    <p className='nombre'>{el.nombre} </p>
-    {/* <p className='precio'> </p> */}
+    <p className='nombre'>{filtro.sabor} </p>
+    <p className='precio'>x {filtro.cantidades} </p>
     </StyledDescripcion>
-    <button className='boton-actualizar'>ACTUALIZAR</button>
+    <button type="submit" onClick={changeData} className='boton-actualizar'>ACTUALIZAR</button>
 </ModalButon>
-    )
-})
-}
+
 
 <StyleGlobal/>
 

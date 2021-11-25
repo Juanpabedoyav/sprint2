@@ -6,6 +6,13 @@ export const StyleGlobal = createGlobalStyle`
     margin:0;
     padding:0;
 }
+.carrito{
+    font-size: 2rem; 
+    /* border: 1px solid red; */
+    margin-left: 15px;
+    text-decoration: none;
+    color:black;
+}
 body{
     margin: 0 auto;
     background-color: #F2F2F2;

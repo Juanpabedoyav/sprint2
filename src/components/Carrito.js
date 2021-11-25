@@ -15,7 +15,7 @@ const Carrito = ({dataCar}) => {
 
     return (
         <>
-        <StyleCarrito >
+<StyleCarrito >
             <Link  to='/'>🡨</Link>
            
 <h1 className="titulo">Carrito</h1>
@@ -30,6 +30,8 @@ const Carrito = ({dataCar}) => {
                     <img src={el.imagen}  alt="" />
                  </div> 
                     <p className='nombre'>{el.sabor} </p>
+                     <p className='precio'>x {el.cantidades} </p>
+
                     <p className='precio'>{el.adicion} </p>
             </StyledDescripcion>
         </Link> 
