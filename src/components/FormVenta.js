@@ -16,7 +16,7 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 
 export const FormVenta = () => {
-//   hooks personalizados
+
 const [cantidad, setCantidad] = useState(0)
 
 const adicionar = ()=> setCantidad(cantidad + 1)
@@ -28,16 +28,11 @@ const [bebida, setBebida] = useState([])
 const [guajalota, setGuajalota] = useState([])
 
 
-// React Router-Dom
 
     const {id}= useParams();
    let filtro = tamal.filter(el=>el.sabor == id) 
    let filtro2 = guajalota.filter(el=>el.sabor == id) 
-//    const a=[];
-//    if(filtro.imagen == undefined )  { 
-//     a = filtro2
-// }
-// console.log(filtro   )
+
 
 
 const getData = async()=>{
@@ -54,18 +49,20 @@ const datosGuajalota = await resGuajalota.json();
  } 
  useEffect(() => {
     getData();
+    console.log(filtro);
  }, [])
 
  const [datos, setDatos] = useState({
     sabor :`${id}`,
-    cantidades: '',
+    cantidades:'',
     total: '',
     adicion: '',
     imagen:``,
     imagen1:``,
 
-
 })
+
+
 const handleChange=({target})=>{
     setDatos({
         ...datos,
@@ -108,7 +105,7 @@ const sendData = async()=>{
           //tamal filtrado con id de busqueda
           filtro.map((el) => {
               return(                   
-               <div className="imgen-principal">
+               <div key={el.id} className="imgen-principal">
                     <img className="img" src={el.imagen} alt={el.sabor} />
                     <p className="sabor-principal">{el.sabor}</p>
                     <p className="precio-principal">${el.precio} MXN</p>
@@ -127,18 +124,12 @@ const sendData = async()=>{
                  //guajalota filtrada con id de busqueda
           filtro2.map((el) => {
               return(                   
-               <div className="imgen-principal">
+               <div key={el.id} className="imgen-principal">
                         {/* <h1>{el.sabor}</h1> */}
                     <img className="img" src={el.imagen} alt={el.sabor} />
                     <p className="sabor-principal">{el.sabor}</p>
                     <p className="precio-principal">${el.precio} MXN</p>
-                    <input  
-                     style={{display:"none"}}
-                     name="imagen1"
-                     value={el.imagen}
-                     onInput={handleChange} 
-                     
-                     />
+                  
                     </div>
                     
             ) 
@@ -149,17 +140,8 @@ const sendData = async()=>{
   </div>
   <StyleCantidad>
   <button className='boton menos'type='button' onClick={restar}>-</button>
- 
-     <input className='input-cantidad' 
-     type="text"
-    name="cantidades"
-    value={datos.cantidades}
-    // onFocusCapture
-    onChange={handleChange} /> 
-    
- 
- 
-   
+ <h1>{ datos.cantidades=cantidad}</h1>
+
   <button className='boton mas' type='button' onClick={()=>adicionar()}>+</button>
 
   </StyleCantidad>
@@ -204,7 +186,7 @@ const sendData = async()=>{
 
             })   
 }
-        <button className="botton" type="submit" onClick={sendData}>Agregar {datos.cantidades} al Carro $ {Number(datos.total) } </button>
+        <button className="botton" type="submit" onClick={sendData}>Agregar {cantidad} al Carro $ {Number(datos.total) } </button>
 </StyleForm>
     )
 }

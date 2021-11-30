@@ -118,14 +118,7 @@ const sendData = async()=>{
   <StyleCantidad>
   <button className='boton menos'type='button' onClick={restar}>-</button>
 
- <h1>
-     <input className='input-cantidad' 
-     type="number"
-    name="cantidades"
-    value={datos.cantidades}
-    // defaultValue={cantidad}
-    onChange={handleChange}
- /></h1>
+ <h1>{datos.cantidades= cantidad}</h1>
    
   <button className='boton mas' type='button' onClick={adicionar}>+</button>
 

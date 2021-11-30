@@ -64,20 +64,9 @@ const changeData = async()=>{
 
 <StyleCantidad>
 <button className='boton menos'type='button' onClick={restar}>-</button>
-      <h1>
-     <form onSubmit={handleSubmit}>
-
-      <input className='input-cantidad' 
-         type="text"
-          name="cantidades"
-          value={modifica.cantidades}
-              onChange={handleChange}
-              
-    /> 
-    </form > 
-
-    </h1>
+     <h1> {modifica.cantidades= cantidad} </h1>
 <button className='boton mas' type='button' onClick={adicionar}>+</button>
+
 </StyleCantidad>
 
 
