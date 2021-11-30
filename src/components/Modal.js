@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from 'react'
+import React,{useState} from 'react'
 import { StyleCantidad } from '../styles/Boton.style'
 import { ModalButon } from '../styles/Carrito.style'
 import '../styles/Modal.style.css'
@@ -13,7 +13,7 @@ const{cantidad, adicionar ,restar }= useContar(0);
 
     
 const {id}= useParams()
-const filtro = dataCar.find(x=>x.id ==id)
+const filtro = dataCar.filter(x=>x.id === id)
 
 const [modifica, setModifica] = useState({
     sabor :`${filtro.sabor}`,
@@ -22,18 +22,7 @@ const [modifica, setModifica] = useState({
     adicion: `${filtro.adicion}`,
 })
 
-const handleChange=({target})=>{
-    setModifica({
-        ...modifica,
-        [target.name]:target.value
-    })
-    console.log(modifica);
-}
 
-const handleSubmit=()=>{
-    alert("se actualizo data")
-
-}
 
 const changeData = async()=>{
  await fetch(`https://srpint2.herokuapp.com/carrito/${id}`,{
