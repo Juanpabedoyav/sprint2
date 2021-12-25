@@ -12,7 +12,7 @@ import flavorguayaba from '../assets/flavorguayaba.svg'
 import {StyleGlobal} from '../styles/Platos.style'
 import { Link, useParams} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { faShoppingCart, faTransgender } from '@fortawesome/free-solid-svg-icons'
 
 
 export const FormVenta = () => {
@@ -49,7 +49,7 @@ const datosGuajalota = await resGuajalota.json();
  } 
  useEffect(() => {
     getData();
-    console.log(filtro);
+    // console.log(filtro);
  }, [])
 
  const [datos, setDatos] = useState({
@@ -59,26 +59,37 @@ const datosGuajalota = await resGuajalota.json();
     adicion: '',
     imagen:``,
     imagen1:``,
-
 })
+const [adicion, setAdicion] = useState({})
+// const {sabor,precio }= adicion
 
 
-const handleChange=({target})=>{
-    setDatos({
-        ...datos,
-        [target.name]: target.value,
+const handleAdicion=({target})=>{
+if(target.checked===true){
+    setAdicion({
+        ...adicion,
+        [target.name] :target.value
     })
-
-    if (target.checked === false) {
-        delete datos.adicion;
-        //   total = total -  Number(datos.adicion);
-    }
-    console.log(datos);
+}else{
+console.log(adicion)
 }
 
+
+        console.log(target.checked, adicion);
+    }
+// console.log(adicion)
+const handleChange=({target})=>{
+
+        setDatos({
+            ...datos,    
+            [target.name]: target.value,
+        
+    })
+        //   total = total -  Number(datos.adicion);
+    // console.log(datos);
+}
 const handleSubmit = (e)=>{
     e.preventDefault();
-   alert("Revisa tu carrito");
 
 }
 
@@ -111,9 +122,9 @@ const sendData = async()=>{
                     <p className="precio-principal">${el.precio} MXN</p>
                     <input 
                      style={{display:"none"}}
-                    name='imagen'
+                    name={el.sabor}
                     value={el.imagen}
-                    onInput={handleChange} />
+                    onInput="{handleChange}" />
                     </div>
             
             ) 
@@ -140,7 +151,7 @@ const sendData = async()=>{
   </div>
   <StyleCantidad>
   <button className='boton menos'type='button' onClick={restar}>-</button>
- <h1>{ datos.cantidades=cantidad}</h1>
+ <h1 onChange={handleChange}>{ datos.cantidades=cantidad} </h1>
 
   <button className='boton mas' type='button' onClick={()=>adicionar()}>+</button>
 
@@ -170,9 +181,10 @@ const sendData = async()=>{
                             <div key={elem.id} className="items">
                                 <input  
                                     type="checkbox"
-                                    name='adicion'
-                                    value={elem.sabor +" + $" + elem.precio +"MXN"}
-                                    onChange={handleChange} />
+                                    name='sabor'
+                                    value={elem.sabor}
+                                    // value={elem.precio}
+                                    onClick={handleAdicion} />
                                     
                                 <img src={elem.imagen} alt={elem.nombre} />
                                 <p className="nombre">{elem.sabor}</p>
