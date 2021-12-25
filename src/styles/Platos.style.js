@@ -6,15 +6,23 @@ export const StyleGlobal = createGlobalStyle`
     margin:0;
     padding:0;
 }
+.carrito{
+    font-size: 2rem; 
+    /* border: 1px solid red; */
+    margin-left: 15px;
+    text-decoration: none;
+    color:black;
+}
 body{
     margin: 0 auto;
     background-color: #F2F2F2;
     font-family: 'Inter', sans-serif;
-    height: 980px;
+    height: ${props=>props.carro ? "500px" : "1150px"};
 }
 a{
     text-decoration: none;
 }
+
 `
 export const StyleContainer= styled.section`
 /* border: 1px solid red; */
@@ -36,6 +44,8 @@ border-radius: 20px;
 margin-bottom: 8px;
 padding-left: 16px;
 border:none;
+
+
 /* border: 1px solid red; */
 `
 export const StyledDescripcion = styled.div`

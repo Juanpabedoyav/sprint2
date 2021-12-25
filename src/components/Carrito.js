@@ -1,17 +1,60 @@
-import React from 'react'
-import { StyleGlobal } from '../styles/Platos.style'
+import React, { useEffect, useState } from 'react'
+import { StyleCard, StyledDescripcion, StyleGlobal } from '../styles/Platos.style'
 import { Link } from 'react-router-dom'
 import { StyleCarrito } from '../styles/Carrito.style'
-const Carrito = () => {
+
+
+
+
+
+const Carrito = ({dataCar}) => {
+// hooks personalizados
+
+
+
+
     return (
-
-        <StyleCarrito>
+        <>
+<StyleCarrito >
             <Link  to='/'>🡨</Link>
-            <h1 className="titulo">carrito</h1>
-            <StyleGlobal/>
+           
+<h1 className="titulo">Carrito</h1>
 
-        </StyleCarrito>
+<div className="cards">
+            {
+                dataCar.map((el)=>{
+                    return(
+        <Link  to={`/carrito/detalle/${el.id}`} className='carrito' key={el.id}>    
+          <StyledDescripcion>
+                <div className="img">   
+                    <img src={el.imagen}  alt="" />
+                    <img src={el.imagen1}  alt="" />
 
+                 </div> 
+                    <p className='nombre'>{el.sabor} </p>
+                     <p className='precio'>x {el.cantidades} </p>
+
+                    <p className='precio'>{el.adicion} </p>
+            </StyledDescripcion>
+        </Link> 
+   
+            )
+                })          
+            }
+</div>
+
+<StyleCard className="cardCar">Total</StyleCard>
+     
+
+      
+            
+                
+
+</StyleCarrito>
+
+<StyleGlobal/>
+
+</>
     )
 }
 

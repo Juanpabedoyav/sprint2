@@ -32,7 +32,7 @@ getData();
         {
            data.map((bebida)=>{
             return (
-            <Link to="/detalle/">
+            <Link to={`/detalle/combo/${bebida.sabor}`}>
             <StyleCard  key={bebida.id}>    
             <div className="img">   
             <img src={bebida.imagen}  alt="" />

@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const StyleForm = styled.form`
 margin-left: 8px;
+height: 1250px;
 .volver{
   font-size: 2rem;
   text-decoration: none;
@@ -10,14 +11,22 @@ margin-left: 8px;
 .combo{
     /* border: 1px solid red; */
     padding: 5px;
-    margin: 5px;
+    margin-left: 10px;
     display: inline-block;
       width: 152px;
       height: 138px;
     text-align: left;
     border-radius: 20px;
       background-color: #FFFF;
+      margin-top: 20px;
+      /* margin-left:auto; */
+      /* margin-right:auto; */
+}
+.items{
+  /* border:1px solid red; */
+  margin: 0 auto;
 
+  
 }
 [type="checkbox"]{
     position: relative;
@@ -26,11 +35,19 @@ margin-left: 8px;
     /* border: 1px solid black; */
     
 }
- .items{
-    /* border: 1px solid green; */
-    /* flex-direction: row; */
-      /* width: 150px; */
- }   
+.sabor-principal{
+  font-size: 1.4rem;
+    color:black;
+    font-weight: 800;
+    text-transform: uppercase;
+} 
+.precio-principal{
+  font-size: 1.2rem;
+    color:#FA4A0C;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-top: 10px; 
+}  
 .nombre{
     font-size:1rem;
     font-weight: 600;
@@ -44,10 +61,10 @@ margin-left: 8px;
     text-transform: uppercase;
 }
 .botton{
-  width:312px;
+  width:340px;
   height: 69px;
   border-radius: 40px;
-  display:block;
+  /* display:block; */
   margin: 0 auto;
   background-color:#FA4A0C;
   border: none;
@@ -56,6 +73,8 @@ margin-left: 8px;
   color: #FFFF;
   margin-top: 40px;
   position: fixed;
+  left:0;
+  right:0;
   bottom: 30px;
 
 }
@@ -71,6 +90,25 @@ font-size: 1.2rem;
 font-weight: 600;
 margin-left: 15px;
 }
+.imgen-principal{
+  /* border: 1px solid red; */
+  margin : 0 auto;
+  text-align: center;
+  .img{
+  /* border: 1px solid red; */
+  height: 120px;
+  width: 120px;
+}
+}
+.car{
+    width: 28px;
+    height: 28px;
+    color:#9A9A9D;
+    /* border: 1px solid red; */
+  position: relative;
+  left: 270px;
+  top: 5px;
+  } 
 
 `
 
@@ -98,5 +136,12 @@ opacity:0.3;
   margin-top: 10px;
 
 }
+.opa{
+  opacity:1; 
+margin-left: 30px;
+margin-top: 10px;
+}
+
+
 }
 `

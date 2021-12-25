@@ -12,7 +12,9 @@ export const Header = () => {
     return (
        <StyleHeader>
             <div>
-            <img src={logo} alt="" />
+            <Link to="/">
+            <img src={logo} alt="logo" />
+            </Link>
             </div>
             <div>
             <Link to='/carrito'><FontAwesomeIcon  className="car" icon={faShoppingCart}/></Link>

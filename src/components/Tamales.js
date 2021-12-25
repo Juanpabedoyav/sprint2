@@ -12,10 +12,12 @@ const Tamales = () => {
    //  let {abrir, abrirModal, cerrarModal} = useModal(false)
 const [data, setData] = useState([])
 
+
    const getData = async()=>{
       const res = await fetch('https://srpint2.herokuapp.com/tamales');
       const datos = await res.json();
       setData(datos);
+      // tamal(data);
    } 
   useEffect(() => {
   getData();

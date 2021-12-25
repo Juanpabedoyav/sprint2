@@ -9,15 +9,20 @@
     height: 100vh;
     opacity: 1;
     z-index:999;
+
 }
 .modal.abrir{
   display: flex;
+  /* flex-direction: column; */
+
 }
 .container{
   background-color:#F2F2F2;
   overflow-y: scroll;
   min-width: 100%; 
   padding-left: 5px;
+    background-color:rgba(0, 0, 0, 0.9);
+
       /* border: 1px solid red; */
 
 }
@@ -27,5 +32,7 @@
   border:none;
   margin-left: 10px;
   font-size: 2rem;
+  background-color: transparent;
+    color: white;
   
 }
